@@ -3,10 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hej</title>
+    <title>Figma SVG Hover Effekt</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Hej</h1>
+    <!-- Version 1: Pilen rykker sig -->
+    <!-- Version 1: Pilen rykker sig -->
+    <a href="#" class="hover-button-move">
+      <svg
+        class="arrow"
+        width="122"
+        height="80"
+        viewBox="0 0 122 80"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="head"
+          d="M101.435 44.7617L73 71.9729L80.5963 79.2422L122 39.6208L80.5963 -0.000613971L73 7.26872L101.435 34.4798L106.462 39.6208L101.435 44.7617Z"
+          fill="white"
+        />
+        <rect class="line-move" y="34" width="108" height="11" fill="white" />
+      </svg>
+    </a>
+
+    <!-- Version 2: Pilen står stille, kun halen vokser -->
+    <a href="#" class="hover-button-static">
+      <svg
+        class="arrow"
+        width="122"
+        height="80"
+        viewBox="0 0 122 80"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          class="head"
+          d="M101.435 44.7617L73 71.9729L80.5963 79.2422L122 39.6208L80.5963 -0.000613971L73 7.26872L101.435 34.4798L106.462 39.6208L101.435 44.7617Z"
+          fill="white"
+        />
+        <rect class="line-static" y="34" width="108" height="11" fill="white" />
+      </svg>
+    </a>
   </body>
 </html>
