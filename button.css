@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #444;
+}
+
+/* Button Styling */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 342px;
+  height: 73px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 3px solid white;
+  background: transparent;
+  overflow: hidden;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Animated Gradient Overlay */
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(244, 162, 137, 0) 0.01%,
+    rgba(244, 162, 137, 0.7) 30%,
+    rgba(244, 162, 137, 1) 100%
+  );
+  transition: width 0.4s ease-in-out;
+}
+
+/* Ensure text stays above */
+.button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover Effect */
+.button:hover {
+  color: black;
+  border-color: #e69c80;
+}
+
+/* Expand the gradient fill, but override opacity at the end */
+.button:hover::before {
+  width: 100%; /* Expands fill */
+}
+
+/* After animation completes, make background solid */
+.button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 1;
+}
