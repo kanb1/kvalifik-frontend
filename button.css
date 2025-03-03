@@ -17,16 +17,16 @@ body {
   height: 2.58rem;
   font-size: 0.9rem;
   font-weight: 400;
-  color: white;
+  color: white; /* TEXT COLOR (before hover)*/
   text-decoration: none;
-  border-radius: 50px;
-  border: 1.2px solid white;
+  border-radius: 3.125rem;
+  border: 0.075rem solid white; /* BORDER COLOR (before hover)*/
   background: transparent;
   overflow: hidden;
   transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-/* Animated Gradient Overlay */
+/* ******* GRADIENT OVERLAY ANIMATION ******* */
 .button::before {
   content: "";
   position: absolute;
@@ -34,7 +34,7 @@ body {
   left: 0;
   width: 0%;
   height: 100%;
-  background: rgb(246, 145, 118);
+  /* GRADIENT COLORS */
   background: linear-gradient(
     90deg,
     rgba(246, 145, 118, 1) 0%,
@@ -42,27 +42,25 @@ body {
     rgba(246, 145, 118, 0.6398026315789473) 100%
   );
   transition: width 0.2s ease-in-out;
-  filter: blur(10px);
+  filter: blur(0.625rem);
 }
 
-/* Ensure text stays above */
+/* Ensures that text stays above the gradient effect */
 .button span {
   position: relative;
   z-index: 1;
 }
 
-/* Hover Effect */
+/* ******* HOVER EFFECT ******* */
 .button:hover {
-  color: black;
-  border-color: #f69176;
+  color: black; /* TEXT COLOR (after hover)*/
+  border-color: #f69176; /* BORDER COLOR (after hover)*/
 }
 
-/* Expand the gradient fill, but override opacity at the end */
 .button:hover::before {
-  width: 100%; /* Expands fill */
+  width: 100%;
 }
 
-/* Ensure background turns solid after animation */
 .button::after {
   content: "";
   position: absolute;
@@ -70,13 +68,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(246, 145, 118, 1); /* SOLID COLOR */
-  opacity: 0; /* Start fully transparent */
-  transition: opacity 0.3s ease-in-out; /* Delayed fade-in */
+  background: rgba(246, 145, 118, 1); /* SOLID COLOR (after animation)*/
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
   z-index: 0;
 }
 
-/* On hover, make background solid */
+/* Solid background on hover */
 .button:hover::after {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
 }
